@@ -1,0 +1,140 @@
+2017-05-04 18:16:53,688, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-04 18:16:53,794, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-04 18:18:10,248, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/usr/local/lib/python2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-04 18:18:10,883, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/usr/local/lib/python2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-04 18:18:15,874, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-04 18:18:15,966, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-04 18:18:19,172, INFO, ParkingRoutes.py, addVehicle(71), The data posted is {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
+2017-05-04 18:18:19,172, ERROR, VehicleController.py, add_vehicle_at_lot(41), Unable to post parking lot to DB
+Traceback (most recent call last):
+  File "/Users/admin/parkinglot/ParkingLots/backend/controllers/VehicleController.py", line 35, in add_vehicle_at_lot
+    status = addVehicle(jsonData)
+NameError: global name 'addVehicle' is not defined
+2017-05-04 18:18:19,172, INFO, VehicleController.py, add_vehicle_at_lot(45), parking lot post to DB of FFC failed
+2017-05-04 18:18:54,034, INFO, ParkingRoutes.py, addVehicle(71), The data posted is {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
+2017-05-04 18:18:54,034, ERROR, VehicleController.py, add_vehicle_at_lot(41), Unable to post parking lot to DB
+Traceback (most recent call last):
+  File "/Users/admin/parkinglot/ParkingLots/backend/controllers/VehicleController.py", line 35, in add_vehicle_at_lot
+    status = addVehicle(jsonData)
+NameError: global name 'addVehicle' is not defined
+2017-05-04 18:18:54,035, INFO, VehicleController.py, add_vehicle_at_lot(45), parking lot post to DB of FFC failed
+2017-05-04 18:19:02,978, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-04 18:19:03,089, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-04 18:19:06,114, INFO, ParkingRoutes.py, addVehicle(71), The data posted is {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
+2017-05-04 18:19:06,114, INFO, VehicleDao.py, connectDb(238), Connecting to db
+2017-05-04 18:19:06,146, INFO, VehicleDao.py, insertIntoDb(37), Inserting into db jsonData {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
+2017-05-04 18:19:06,147, INFO, VehicleDao.py, connectDb(238), Connecting to db
+2017-05-04 18:19:06,150, INFO, VehicleDao.py, insertIntoDb(44), Locking Index table to update
+2017-05-04 18:19:06,150, INFO, VehicleDao.py, getIndex(191), Getting current index
+2017-05-04 18:19:06,150, INFO, VehicleDao.py, connectDb(238), Connecting to db
+2017-05-04 18:19:06,150, INFO, VehicleDao.py, getIndex(197), select indexvalue from IndexTable where name = "ParkingInfo"
+2017-05-04 18:19:06,161, ERROR, VehicleDao.py, getIndex(210), no table exists, creating tables no such table: IndexTable
+Traceback (most recent call last):
+  File "/Users/admin/parkinglot/ParkingLots/backend/lib/VehicleDao.py", line 198, in getIndex
+    rows = c.execute(sql)
+OperationalError: no such table: IndexTable
+2017-05-04 18:19:06,162, INFO, VehicleDao.py, createTable(87), Creating required tables
+2017-05-04 18:19:06,165, INFO, VehicleDao.py, createTable(104), Required Tables created
+2017-05-04 18:19:06,166, INFO, VehicleDao.py, createTable(117), Tables initialization complete
+2017-05-04 18:19:06,166, INFO, VehicleDao.py, insertIntoDb(47), Current cout index is 1
+2017-05-04 18:19:06,166, INFO, VehicleDao.py, updateIndex(220), Updating current index
+2017-05-04 18:19:06,167, INFO, VehicleDao.py, updateIndex(227), Index value updated to : 2 for table ParkingInfo 
+2017-05-04 18:19:06,167, INFO, VehicleDao.py, insertIntoDb(59), Mutex released
+2017-05-04 18:19:06,168, INFO, VehicleDao.py, insertIntoDb(61), jsonData {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
+2017-05-04 18:19:06,168, INFO, VehicleDao.py, insertIntoDb(65), count 2 , jsonData {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
+2017-05-04 18:19:06,169, INFO, VehicleDao.py, insertIntoDb(75), Parking  inserted into db count 2 
+2017-05-04 18:34:53,048, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:34:53,048, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
+2017-05-04 18:34:53,048, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:34:53,049, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = "1"
+2017-05-04 18:34:53,049, INFO, ParkingDao.py, getRowParkingLot(235), get index rows None
+2017-05-04 18:34:53,049, INFO, ParkingDao.py, createTable(89), Creating required tables
+2017-05-04 18:34:53,050, INFO, ParkingDao.py, createTable(111), Required Tables created
+2017-05-04 18:34:53,050, INFO, ParkingDao.py, createTable(124), Tables initialization complete
+2017-05-04 18:35:28,074, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:35:28,075, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
+2017-05-04 18:35:28,075, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:35:28,075, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = "1"
+2017-05-04 18:35:28,075, INFO, ParkingDao.py, getRowParkingLot(235), get index rows None
+2017-05-04 18:35:28,075, INFO, ParkingDao.py, createTable(89), Creating required tables
+2017-05-04 18:35:28,076, INFO, ParkingDao.py, createTable(111), Required Tables created
+2017-05-04 18:35:28,076, INFO, ParkingDao.py, createTable(124), Tables initialization complete
+2017-05-04 18:36:09,980, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:36:09,980, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
+2017-05-04 18:36:09,980, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:36:09,980, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 1
+2017-05-04 18:36:09,981, INFO, ParkingDao.py, getRowParkingLot(235), get index rows None
+2017-05-04 18:36:09,981, INFO, ParkingDao.py, createTable(89), Creating required tables
+2017-05-04 18:36:09,981, INFO, ParkingDao.py, createTable(111), Required Tables created
+2017-05-04 18:36:09,981, INFO, ParkingDao.py, createTable(124), Tables initialization complete
+2017-05-04 18:37:42,226, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:37:42,226, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
+2017-05-04 18:37:42,226, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:37:42,226, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
+2017-05-04 18:37:42,227, ERROR, ParkingDao.py, getRowParkingLot(250), Unable to fetch current index of Parking 
+Traceback (most recent call last):
+  File "/Users/admin/parkinglot/ParkingLots/backend/lib/ParkingDao.py", line 235, in getRowParkingLot
+    logging.info("get index rows %s"%count)
+TypeError: not all arguments converted during string formatting
+2017-05-04 18:42:53,082, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:42:53,082, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
+2017-05-04 18:42:53,082, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:42:53,082, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
+2017-05-04 18:42:53,083, INFO, ParkingDao.py, getRowParkingLot(235), get index rows 0
+2017-05-04 18:42:53,083, INFO, ParkingDao.py, getRowParkingLot(241), Index value in auto increment table  : 0
+2017-05-04 18:44:51,376, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:44:51,376, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
+2017-05-04 18:44:51,376, INFO, ParkingDao.py, connectDb(273), Connecting to db
+2017-05-04 18:44:51,376, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
+2017-05-04 18:44:51,377, INFO, ParkingDao.py, getRowParkingLot(235), get index rows <type 'tuple'>
+2017-05-04 18:44:51,377, ERROR, ParkingDao.py, getRowParkingLot(250), Unable to fetch current index of Parking 
+Traceback (most recent call last):
+  File "/Users/admin/parkinglot/ParkingLots/backend/lib/ParkingDao.py", line 241, in getRowParkingLot
+    logging.info("Index value in auto increment table  : %d"%count)
+TypeError: not all arguments converted during string formatting
+2017-05-04 18:46:52,192, INFO, ParkingDao.py, connectDb(274), Connecting to db
+2017-05-04 18:46:52,193, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
+2017-05-04 18:46:52,193, INFO, ParkingDao.py, connectDb(274), Connecting to db
+2017-05-04 18:46:52,193, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
+2017-05-04 18:46:52,193, INFO, ParkingDao.py, getRowParkingLot(235), get index rows <type 'tuple'>
+2017-05-04 18:46:57,512, INFO, ParkingDao.py, connectDb(274), Connecting to db
+2017-05-04 18:46:57,512, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
+2017-05-04 18:46:57,512, INFO, ParkingDao.py, connectDb(274), Connecting to db
+2017-05-04 18:46:57,513, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
+2017-05-04 18:46:57,513, INFO, ParkingDao.py, getRowParkingLot(235), get index rows <type 'tuple'>
+2017-05-04 18:47:09,402, INFO, ParkingDao.py, connectDb(274), Connecting to db
+2017-05-04 18:47:09,402, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
+2017-05-04 18:47:09,402, INFO, ParkingDao.py, connectDb(274), Connecting to db
+2017-05-04 18:47:09,403, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
+2017-05-04 18:47:09,403, INFO, ParkingDao.py, getRowParkingLot(235), get index rows <type 'tuple'>
+2017-05-04 18:47:22,048, INFO, ParkingDao.py, connectDb(274), Connecting to db
+2017-05-04 18:47:22,048, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
+2017-05-04 18:47:22,049, INFO, ParkingDao.py, connectDb(274), Connecting to db
+2017-05-04 18:47:22,049, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
+2017-05-04 18:47:22,049, INFO, ParkingDao.py, getRowParkingLot(235), get index rows <type 'tuple'>
+2017-05-04 19:22:06,171, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/usr/local/lib/python2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-04 19:22:06,473, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/usr/local/lib/python2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0

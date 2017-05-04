@@ -1,0 +1,5 @@
+argparse==1.2.1
+bottle==0.12.9
+netifaces==0.10.5
+simplejson==3.8.2
+wsgiref==0.1.2

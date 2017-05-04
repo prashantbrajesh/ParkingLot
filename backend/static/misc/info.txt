@@ -1,0 +1,8 @@
+
+
+
+
+/* SITE */
+  Components: python, bottle
+  Software: subl, vi, Git
+  Servers: Linux, Nginx, Redis, 
