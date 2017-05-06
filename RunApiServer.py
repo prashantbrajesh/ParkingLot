@@ -4,7 +4,7 @@ from backend import app
 from bottle import run, debug, request, response
 from backend.lib.LogSetup import logging
 import ParkingConfig as config
-sys.path.append('/Users/admin/parkinglot/ParkingLot')
+sys.path.append('/Users/braj/git/ParkingLots/')
 PORT = config.API_SERVER_PORT
 
 
@@ -22,6 +22,7 @@ def main():
 		#port = int(os.environ.get("PORT", PORT))
 	try:
 		run(app, host='0.0.0.0', port=PORT, reloader=True)
+		logging.info("baba")
 
 	except:
 		logging.exception("An error occurred while trying to start the API server")

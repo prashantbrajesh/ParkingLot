@@ -1,140 +1,326 @@
-2017-05-04 18:16:53,688, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-04 18:16:53,794, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-04 18:18:10,248, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+2017-05-07 02:02:53,277, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:02:53,417, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:02:58,769, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
+2017-05-07 02:02:58,770, INFO, ParkingController.py, response_parking(10), response customer controller
+2017-05-07 02:02:58,770, INFO, ManageParking.py, getParking(16), get Parking Manage head count
+2017-05-07 02:02:58,783, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 02:02:58,791, INFO, ManageParking.py, getParking(21), {'lMVParkingPrice': 15, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x10a362290>, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 5, 'totalCountOfSpaces': 10}
+2017-05-07 02:02:58,791, INFO, ParkingController.py, response_parking(25), get Parking FFC {'lMVParkingPrice': 15, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x10a362290>, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 5, 'totalCountOfSpaces': 10}
+2017-05-07 02:09:01,478, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
 Traceback (most recent call last):
-  File "RunApiServer.py", line 24, in main
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/usr/local/lib/python2.7/site-packages/bottle.py", line 3115, in run
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
     sys.exit(3)
 SystemExit: 3
-2017-05-04 18:18:10,883, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+2017-05-07 02:09:02,453, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
 Traceback (most recent call last):
-  File "RunApiServer.py", line 24, in main
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/usr/local/lib/python2.7/site-packages/bottle.py", line 3075, in run
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
     sys.exit(p.poll())
 SystemExit: 0
-2017-05-04 18:18:15,874, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-04 18:18:15,966, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-04 18:18:19,172, INFO, ParkingRoutes.py, addVehicle(71), The data posted is {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
-2017-05-04 18:18:19,172, ERROR, VehicleController.py, add_vehicle_at_lot(41), Unable to post parking lot to DB
+2017-05-07 02:14:58,092, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:14:58,238, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:15:02,851, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
+2017-05-07 02:15:02,851, INFO, ParkingController.py, response_parking(10), response customer controller
+2017-05-07 02:15:02,851, INFO, ManageParking.py, getParking(16), get Parking Manage head count
+2017-05-07 02:15:02,856, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 02:15:02,862, ERROR, ManageParking.py, getParking(24), Get Parking Info failed
 Traceback (most recent call last):
-  File "/Users/admin/parkinglot/ParkingLots/backend/controllers/VehicleController.py", line 35, in add_vehicle_at_lot
-    status = addVehicle(jsonData)
-NameError: global name 'addVehicle' is not defined
-2017-05-04 18:18:19,172, INFO, VehicleController.py, add_vehicle_at_lot(45), parking lot post to DB of FFC failed
-2017-05-04 18:18:54,034, INFO, ParkingRoutes.py, addVehicle(71), The data posted is {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
-2017-05-04 18:18:54,034, ERROR, VehicleController.py, add_vehicle_at_lot(41), Unable to post parking lot to DB
+  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
+    logging.info(postJson.__dict__.remove("_sa_instance_state"))
+AttributeError: 'dict' object has no attribute 'remove'
+2017-05-07 02:15:02,862, ERROR, ParkingController.py, response_parking(14), Error Unable to get customers
 Traceback (most recent call last):
-  File "/Users/admin/parkinglot/ParkingLots/backend/controllers/VehicleController.py", line 35, in add_vehicle_at_lot
-    status = addVehicle(jsonData)
-NameError: global name 'addVehicle' is not defined
-2017-05-04 18:18:54,035, INFO, VehicleController.py, add_vehicle_at_lot(45), parking lot post to DB of FFC failed
-2017-05-04 18:19:02,978, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-04 18:19:03,089, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-04 18:19:06,114, INFO, ParkingRoutes.py, addVehicle(71), The data posted is {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
-2017-05-04 18:19:06,114, INFO, VehicleDao.py, connectDb(238), Connecting to db
-2017-05-04 18:19:06,146, INFO, VehicleDao.py, insertIntoDb(37), Inserting into db jsonData {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
-2017-05-04 18:19:06,147, INFO, VehicleDao.py, connectDb(238), Connecting to db
-2017-05-04 18:19:06,150, INFO, VehicleDao.py, insertIntoDb(44), Locking Index table to update
-2017-05-04 18:19:06,150, INFO, VehicleDao.py, getIndex(191), Getting current index
-2017-05-04 18:19:06,150, INFO, VehicleDao.py, connectDb(238), Connecting to db
-2017-05-04 18:19:06,150, INFO, VehicleDao.py, getIndex(197), select indexvalue from IndexTable where name = "ParkingInfo"
-2017-05-04 18:19:06,161, ERROR, VehicleDao.py, getIndex(210), no table exists, creating tables no such table: IndexTable
+  File "/Users/braj/git/ParkingLots/backend/controllers/ParkingController.py", line 12, in response_parking
+    data = getParking()
+  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
+    logging.info(postJson.__dict__.remove("_sa_instance_state"))
+AttributeError: 'dict' object has no attribute 'remove'
+2017-05-07 02:15:02,865, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
+    "response": null, 
+    "status": {
+        "code": 500, 
+        "message": "get Parking fail", 
+        "success": false
+    }
+}
+2017-05-07 02:17:33,774, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
+2017-05-07 02:17:33,778, INFO, ParkingController.py, response_parking(10), response customer controller
+2017-05-07 02:17:33,778, INFO, ManageParking.py, getParking(16), get Parking Manage head count
+2017-05-07 02:17:33,787, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 02:17:33,814, ERROR, ManageParking.py, getParking(24), Get Parking Info failed
 Traceback (most recent call last):
-  File "/Users/admin/parkinglot/ParkingLots/backend/lib/VehicleDao.py", line 198, in getIndex
-    rows = c.execute(sql)
-OperationalError: no such table: IndexTable
-2017-05-04 18:19:06,162, INFO, VehicleDao.py, createTable(87), Creating required tables
-2017-05-04 18:19:06,165, INFO, VehicleDao.py, createTable(104), Required Tables created
-2017-05-04 18:19:06,166, INFO, VehicleDao.py, createTable(117), Tables initialization complete
-2017-05-04 18:19:06,166, INFO, VehicleDao.py, insertIntoDb(47), Current cout index is 1
-2017-05-04 18:19:06,166, INFO, VehicleDao.py, updateIndex(220), Updating current index
-2017-05-04 18:19:06,167, INFO, VehicleDao.py, updateIndex(227), Index value updated to : 2 for table ParkingInfo 
-2017-05-04 18:19:06,167, INFO, VehicleDao.py, insertIntoDb(59), Mutex released
-2017-05-04 18:19:06,168, INFO, VehicleDao.py, insertIntoDb(61), jsonData {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
-2017-05-04 18:19:06,168, INFO, VehicleDao.py, insertIntoDb(65), count 2 , jsonData {'lotId': 25, 'vehicleType': 1, 'vehicleId': 24}
-2017-05-04 18:19:06,169, INFO, VehicleDao.py, insertIntoDb(75), Parking  inserted into db count 2 
-2017-05-04 18:34:53,048, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:34:53,048, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
-2017-05-04 18:34:53,048, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:34:53,049, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = "1"
-2017-05-04 18:34:53,049, INFO, ParkingDao.py, getRowParkingLot(235), get index rows None
-2017-05-04 18:34:53,049, INFO, ParkingDao.py, createTable(89), Creating required tables
-2017-05-04 18:34:53,050, INFO, ParkingDao.py, createTable(111), Required Tables created
-2017-05-04 18:34:53,050, INFO, ParkingDao.py, createTable(124), Tables initialization complete
-2017-05-04 18:35:28,074, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:35:28,075, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
-2017-05-04 18:35:28,075, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:35:28,075, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = "1"
-2017-05-04 18:35:28,075, INFO, ParkingDao.py, getRowParkingLot(235), get index rows None
-2017-05-04 18:35:28,075, INFO, ParkingDao.py, createTable(89), Creating required tables
-2017-05-04 18:35:28,076, INFO, ParkingDao.py, createTable(111), Required Tables created
-2017-05-04 18:35:28,076, INFO, ParkingDao.py, createTable(124), Tables initialization complete
-2017-05-04 18:36:09,980, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:36:09,980, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
-2017-05-04 18:36:09,980, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:36:09,980, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 1
-2017-05-04 18:36:09,981, INFO, ParkingDao.py, getRowParkingLot(235), get index rows None
-2017-05-04 18:36:09,981, INFO, ParkingDao.py, createTable(89), Creating required tables
-2017-05-04 18:36:09,981, INFO, ParkingDao.py, createTable(111), Required Tables created
-2017-05-04 18:36:09,981, INFO, ParkingDao.py, createTable(124), Tables initialization complete
-2017-05-04 18:37:42,226, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:37:42,226, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
-2017-05-04 18:37:42,226, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:37:42,226, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
-2017-05-04 18:37:42,227, ERROR, ParkingDao.py, getRowParkingLot(250), Unable to fetch current index of Parking 
+  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
+    logging.info(postJson.__dict__.removeValueForKey("_sa_instance_state"))
+AttributeError: 'dict' object has no attribute 'remove'
+2017-05-07 02:17:33,816, ERROR, ParkingController.py, response_parking(14), Error Unable to get customers
 Traceback (most recent call last):
-  File "/Users/admin/parkinglot/ParkingLots/backend/lib/ParkingDao.py", line 235, in getRowParkingLot
-    logging.info("get index rows %s"%count)
-TypeError: not all arguments converted during string formatting
-2017-05-04 18:42:53,082, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:42:53,082, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
-2017-05-04 18:42:53,082, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:42:53,082, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
-2017-05-04 18:42:53,083, INFO, ParkingDao.py, getRowParkingLot(235), get index rows 0
-2017-05-04 18:42:53,083, INFO, ParkingDao.py, getRowParkingLot(241), Index value in auto increment table  : 0
-2017-05-04 18:44:51,376, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:44:51,376, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
-2017-05-04 18:44:51,376, INFO, ParkingDao.py, connectDb(273), Connecting to db
-2017-05-04 18:44:51,376, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
-2017-05-04 18:44:51,377, INFO, ParkingDao.py, getRowParkingLot(235), get index rows <type 'tuple'>
-2017-05-04 18:44:51,377, ERROR, ParkingDao.py, getRowParkingLot(250), Unable to fetch current index of Parking 
+  File "/Users/braj/git/ParkingLots/backend/controllers/ParkingController.py", line 12, in response_parking
+    data = getParking()
+  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
+    logging.info(postJson.__dict__.removeValueForKey("_sa_instance_state"))
+AttributeError: 'dict' object has no attribute 'remove'
+2017-05-07 02:17:33,817, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
+    "response": null, 
+    "status": {
+        "code": 500, 
+        "message": "get Parking fail", 
+        "success": false
+    }
+}
+2017-05-07 02:17:40,136, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:17:40,286, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:17:41,388, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
 Traceback (most recent call last):
-  File "/Users/admin/parkinglot/ParkingLots/backend/lib/ParkingDao.py", line 241, in getRowParkingLot
-    logging.info("Index value in auto increment table  : %d"%count)
-TypeError: not all arguments converted during string formatting
-2017-05-04 18:46:52,192, INFO, ParkingDao.py, connectDb(274), Connecting to db
-2017-05-04 18:46:52,193, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
-2017-05-04 18:46:52,193, INFO, ParkingDao.py, connectDb(274), Connecting to db
-2017-05-04 18:46:52,193, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
-2017-05-04 18:46:52,193, INFO, ParkingDao.py, getRowParkingLot(235), get index rows <type 'tuple'>
-2017-05-04 18:46:57,512, INFO, ParkingDao.py, connectDb(274), Connecting to db
-2017-05-04 18:46:57,512, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
-2017-05-04 18:46:57,512, INFO, ParkingDao.py, connectDb(274), Connecting to db
-2017-05-04 18:46:57,513, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
-2017-05-04 18:46:57,513, INFO, ParkingDao.py, getRowParkingLot(235), get index rows <type 'tuple'>
-2017-05-04 18:47:09,402, INFO, ParkingDao.py, connectDb(274), Connecting to db
-2017-05-04 18:47:09,402, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
-2017-05-04 18:47:09,402, INFO, ParkingDao.py, connectDb(274), Connecting to db
-2017-05-04 18:47:09,403, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
-2017-05-04 18:47:09,403, INFO, ParkingDao.py, getRowParkingLot(235), get index rows <type 'tuple'>
-2017-05-04 18:47:22,048, INFO, ParkingDao.py, connectDb(274), Connecting to db
-2017-05-04 18:47:22,048, INFO, ParkingDao.py, getRowParkingLot(226), Getting current index
-2017-05-04 18:47:22,049, INFO, ParkingDao.py, connectDb(274), Connecting to db
-2017-05-04 18:47:22,049, INFO, ParkingDao.py, getRowParkingLot(232), select lMVOccupied, twoWheelerOccupied, twoWheelerParkingPrice, lMVParkingPrice from ParkingInfo where id = 2
-2017-05-04 18:47:22,049, INFO, ParkingDao.py, getRowParkingLot(235), get index rows <type 'tuple'>
-2017-05-04 19:22:06,171, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
-Traceback (most recent call last):
-  File "RunApiServer.py", line 24, in main
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/usr/local/lib/python2.7/site-packages/bottle.py", line 3115, in run
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3127, in run
     sys.exit(3)
 SystemExit: 3
-2017-05-04 19:22:06,473, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+2017-05-07 02:17:42,158, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 02:17:52,238, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:17:52,363, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:17:56,770, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
+2017-05-07 02:17:56,771, INFO, ParkingController.py, response_parking(10), response customer controller
+2017-05-07 02:17:56,771, INFO, ManageParking.py, getParking(16), get Parking Manage head count
+2017-05-07 02:17:56,781, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 02:17:56,788, ERROR, ManageParking.py, getParking(24), Get Parking Info failed
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
+    logging.info(postJson.__dict__.removeValueForKey("_sa_instance_state"))
+AttributeError: 'dict' object has no attribute 'removeValueForKey'
+2017-05-07 02:17:56,788, ERROR, ParkingController.py, response_parking(14), Error Unable to get customers
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/controllers/ParkingController.py", line 12, in response_parking
+    data = getParking()
+  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
+    logging.info(postJson.__dict__.removeValueForKey("_sa_instance_state"))
+AttributeError: 'dict' object has no attribute 'removeValueForKey'
+2017-05-07 02:17:56,791, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
+    "response": null, 
+    "status": {
+        "code": 500, 
+        "message": "get Parking fail", 
+        "success": false
+    }
+}
+2017-05-07 02:19:12,154, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:19:12,292, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:19:39,372, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:19:39,571, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:19:45,323, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
+2017-05-07 02:19:45,326, INFO, ParkingController.py, response_parking(10), response customer controller
+2017-05-07 02:19:45,326, INFO, ManageParking.py, getParking(16), get Parking Manage head count
+2017-05-07 02:19:45,340, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 02:19:45,350, INFO, ManageParking.py, getParking(22), {'lMVParkingPrice': 15, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 5, 'totalCountOfSpaces': 10}
+2017-05-07 02:19:45,350, INFO, ParkingController.py, response_parking(25), get Parking FFC {'lMVParkingPrice': 15, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 5, 'totalCountOfSpaces': 10}
+2017-05-07 02:19:45,350, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
+    "response": {
+        "_sa_instance_state": "", 
+        "lMVOccupied": false, 
+        "lMVParkingCount": 5, 
+        "lMVParkingPrice": 15, 
+        "lotId": 1, 
+        "totalCountOfSpaces": 10, 
+        "twoWheelerOccupied": false, 
+        "twoWheelerParkingCount": 5, 
+        "twoWheelerParkingPrice": 12
+    }, 
+    "status": {
+        "code": 200, 
+        "message": "success", 
+        "success": true
+    }
+}
+2017-05-07 02:24:27,044, INFO, ParkingRoutes.py, addParkingLot(33), The data posted is {'lMVParkingPrice': 16, 'totalCountOfSpaces': 15, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10}
+2017-05-07 02:24:33,502, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
+2017-05-07 02:24:33,506, INFO, ParkingController.py, response_parking(10), response customer controller
+2017-05-07 02:24:33,506, INFO, ManageParking.py, getParking(16), get Parking Manage head count
+2017-05-07 02:24:33,519, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 02:24:33,535, INFO, ManageParking.py, getParking(22), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 02:24:33,535, INFO, ParkingController.py, response_parking(25), get Parking FFC {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 02:24:33,535, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
+    "response": {
+        "_sa_instance_state": "", 
+        "lMVOccupied": false, 
+        "lMVParkingCount": 5, 
+        "lMVParkingPrice": 16, 
+        "lotId": 1, 
+        "totalCountOfSpaces": 15, 
+        "twoWheelerOccupied": false, 
+        "twoWheelerParkingCount": 10, 
+        "twoWheelerParkingPrice": 12
+    }, 
+    "status": {
+        "code": 200, 
+        "message": "success", 
+        "success": true
+    }
+}
+2017-05-07 02:26:19,967, INFO, ParkingRoutes.py, addParkingLot(33), The data posted is {'lMVParkingPrice': 16, 'totalCountOfSpaces': 15, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10}
+2017-05-07 02:26:24,988, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
+2017-05-07 02:26:24,988, INFO, ParkingController.py, response_parking(10), response customer controller
+2017-05-07 02:26:24,989, INFO, ManageParking.py, getParking(16), get Parking Manage head count
+2017-05-07 02:26:24,993, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 02:26:24,999, INFO, ManageParking.py, getParking(22), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 02:26:24,999, INFO, ParkingController.py, response_parking(25), get Parking FFC {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 02:26:25,000, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
+    "response": {
+        "_sa_instance_state": "", 
+        "lMVOccupied": false, 
+        "lMVParkingCount": 5, 
+        "lMVParkingPrice": 16, 
+        "lotId": 1, 
+        "totalCountOfSpaces": 15, 
+        "twoWheelerOccupied": false, 
+        "twoWheelerParkingCount": 10, 
+        "twoWheelerParkingPrice": 12
+    }, 
+    "status": {
+        "code": 200, 
+        "message": "success", 
+        "success": true
+    }
+}
+2017-05-07 02:26:47,226, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 02:26:47,800, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 02:32:43,195, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:32:43,336, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:32:52,439, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 02:32:53,234, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 02:33:06,086, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:33:06,234, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:33:19,342, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 02:33:20,135, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 02:33:41,921, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:33:42,060, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:33:49,189, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 02:33:49,965, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 02:35:37,043, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:35:37,186, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:35:42,306, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
 Traceback (most recent call last):
   File "RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/usr/local/lib/python2.7/site-packages/bottle.py", line 3075, in run
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 02:35:43,073, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 02:35:50,488, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:35:50,793, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:35:59,923, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 02:36:00,535, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 02:36:25,783, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:36:26,022, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 02:36:43,371, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
+2017-05-07 02:36:43,373, INFO, ParkingController.py, response_parking(10), response customer controller
+2017-05-07 02:36:43,374, INFO, ManageParking.py, getParking(16), get Parking Manage head count
+2017-05-07 02:36:43,385, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 02:36:43,399, INFO, ManageParking.py, getParking(22), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 02:36:43,399, INFO, ParkingController.py, response_parking(25), get Parking FFC {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 02:36:43,399, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
+    "response": {
+        "_sa_instance_state": "", 
+        "lMVOccupied": 0, 
+        "lMVParkingCount": 5, 
+        "lMVParkingPrice": 16, 
+        "lotId": 1, 
+        "totalCountOfSpaces": 15, 
+        "twoWheelerOccupied": 0, 
+        "twoWheelerParkingCount": 10, 
+        "twoWheelerParkingPrice": 12
+    }, 
+    "status": {
+        "code": 200, 
+        "message": "success", 
+        "success": true
+    }
+}
+2017-05-07 02:43:34,275, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 02:43:35,049, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
     sys.exit(p.poll())
 SystemExit: 0

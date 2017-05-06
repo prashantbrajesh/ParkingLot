@@ -1,24 +1,9 @@
 from backend import app
 from bottle import request, template, response
 from backend.lib.LogSetup import logging
+import backend.lib.ManageParking as  mngParking
 from backend.models.Response import parkingResponse
 import simplejson as json
-
-		
-@app.route('/check', method=['GET'])
-def headCountGet():
-	from backend.controllers.CustomerController import CustomerController
-	logging.debug("/headcount  GET called to post data to instore")
-	cstHand = CustomerController()
-	try:
-		postJson = cstHand.post_to_instore()
-		logging.debug('sending  %s'%(postJson))
-	except ValueError:
-		logging.exception("Some error occurred while trying to send headcount to instore")
-
-	response.content_type = 'application/json'
-	#post json response received from function is already serialized
-	return postJson
 
 @app.route('/parkings', method=['GET'])
 def getRecentCustomers():
@@ -67,7 +52,10 @@ def addVehicle():
 		from backend.controllers.VehicleController import VehicleController
 		cstHand = VehicleController()
 		try:
+
 			postJson = json.load(request.body)
+			obj = mngParking.getParkingDetaisByLotId(postJson["lotId"])
+			if (obj.)
 			logging.info("The data posted is %s"%postJson)
 			postResponse = cstHand.add_vehicle_at_lot(postJson)
 			return postResponse

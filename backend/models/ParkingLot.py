@@ -1,10 +1,23 @@
 import json as json
+from sqlalchemy import Column, Integer, String, Boolean
+import sys
+sys.path.append('/Users/braj/git/ParkingLots/')
+print sys.path
+from backend.lib.BaseDeclerative import Base
 
-class ParkingLot(object):
+class ParkingLot(Base):
+    __tablename__ = "parkinglot"
+    lotId = Column(Integer, primary_key=True)  # 1 for in and 0 for out
+    totalCountOfSpaces = Column(Integer,nullable=False)
+    twoWheelerParkingPrice = Column(Integer,nullable=False)
+    lMVParkingPrice = Column(Integer,nullable=False)
+    twoWheelerParkingCount = Column(Integer,nullable=False)
+    lMVParkingCount = Column(Integer,nullable=False)
+    twoWheelerOccupied = Column(Integer,nullable=False)
+    lMVOccupied = Column(Integer,nullable=False)
 
-    def __init__(self, lotId, totalCountOfSpaces, twoWheelerParkingPrice, lMVParkingPrice,twoWheelerParkingCount):
-        self.lotId = lotId # 1 for in and 0 for out
-        self.totalCountOfSpaces = countOfSpaces
+    def __init__(self, totalCountOfSpaces, twoWheelerParkingPrice, lMVParkingPrice,twoWheelerParkingCount):
+        self.totalCountOfSpaces = totalCountOfSpaces
         self.twoWheelerParkingPrice = twoWheelerParkingPrice
         self.lMVParkingPrice = lMVParkingPrice
         self.twoWheelerParkingCount = twoWheelerParkingCount

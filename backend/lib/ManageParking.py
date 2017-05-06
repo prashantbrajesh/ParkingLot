@@ -5,6 +5,8 @@ import requests, os, sys
 import json
 import ParkingConfig as config
 from LogSetup import logging
+from backend.models.ParkingLot import ParkingLot
+from backend.models.Vehicle import Vehicle
 
 
 
@@ -15,26 +17,36 @@ def getParking():
 	try:
 		pDao = ParkingDao()
 		# cust.createTable()
-		postJson = pDao.getParkings()
-		return postJson
+		postJson = pDao.readRowFromTable(1)
+		postJson.__dict__["_sa_instance_state"] = ""
+		logging.info(postJson.__dict__)
+		return postJson.__dict__
 	except :
 		logging.exception("Get Parking Info failed")
 		raise
 
-def deleteTables(type="_Test"):
-	logging.info("Deleting the customer tables")
+def getParkingDetaisByLotId(id):
+	logging.info("get Parking Manage head count")
 	try:
 		pDao = ParkingDao()
-		pDao.dropTable(config.TABLE_NAME+type)
+		# cust.createTable()
+		postJson = pDao.readRowFromTable(id)
+		postJson.__dict__["_sa_instance_state"] = ""
+		logging.info(postJson.__dict__)
+		return postJson.__dict__
 	except :
-		logging.exception("Parking Table delete failed")
+		logging.exception("Get Parking Info failed")
 		raise
 
 def addParkingLot(jsonData):
 	try:
+		totalCountOfSpaces = jsonData["totalCountOfSpaces"]
+		twoWheelerParkingPrice = jsonData["twoWheelerParkingPrice"]
+		lMVParkingPrice = jsonData["lMVParkingPrice"]
+		twoWheelerParkingCount = jsonData["twoWheelerParkingCount"]
+		parkingLotObj = ParkingLot(totalCountOfSpaces, twoWheelerParkingPrice, lMVParkingPrice,twoWheelerParkingCount)
 		pDao = ParkingDao()
-		# cust.createTable()
-		pDao.insertIntoDb(jsonData)
+		pDao.insertIntoTable(parkingLotObj)
 		return True
 	except:
 		logging.exception("Some error occurred while trying to insert in/out in DB")
@@ -43,9 +55,13 @@ def addParkingLot(jsonData):
 
 def addVehicle(jsonData):
 	try:
+		lotId = jsonData["lotId"]
+		vehicleType = jsonData["vehicleType"]
+		vehicleId = jsonData["vehicleId"]
+		vachileObj = Vehicle(vehicleType, vehicleId)
 		pDao = VehicleDao()
 		# cust.createTable()
-		pDao.insertIntoDb(jsonData)
+		pDao.insertIntoTable(vachileObj)
 		return True
 	except:
 		logging.exception("Some error occurred while trying to insert in/out in DB")
