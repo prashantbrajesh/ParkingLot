@@ -10,7 +10,39 @@ class ParkingDao(BaseDao):
 		result = session.query(ParkingLot).filter_by(lotId = id).first()
 		return result
 
+	def updatetwoWheelerOccupied(self, id):
+		logging.info("updatetwoWheelerOccupied update")
+		session = self.create_session()
+		result = session.query(ParkingLot).filter_by(lotId = id).first()
+		result.twoWheelerOccupied = result.twoWheelerOccupied + 1
+		session.commit()
+		return result
 
+	def updatelMVOccupied(self, id):
+		logging.info("updatetwoWheelerOccupied update")
+		session = self.create_session()
+		result = session.query(ParkingLot).filter_by(lotId = id).first()
+		result.lMVOccupied = result.lMVOccupied + 1
+		session.commit()
+		return result
+
+	def updateRemovetwoWheelerOccupied(self, id):
+		logging.info("updatetwoWheelerOccupied update")
+		session = self.create_session()
+		result = session.query(ParkingLot).filter_by(lotId = id).first()
+		if(result.twoWheelerOccupied > 0):
+			result.twoWheelerOccupied = result.twoWheelerOccupied - 1
+		session.commit()
+		return result
+
+	def updateRemoveLmvOccupied(self, id):
+		logging.info("updatetwoWheelerOccupied update")
+		session = self.create_session()
+		result = session.query(ParkingLot).filter_by(lotId = id).first()
+		if(result.lMVOccupied > 0):
+			result.lMVOccupied = result.lMVOccupied - 1
+		session.commit()
+		return result
 
 def main():
 	ObjCustCount = ParkingDao()

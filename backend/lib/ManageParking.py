@@ -18,9 +18,8 @@ def getParking():
 		pDao = ParkingDao()
 		# cust.createTable()
 		postJson = pDao.readRowFromTable(1)
-		postJson.__dict__["_sa_instance_state"] = ""
-		logging.info(postJson.__dict__)
-		return postJson.__dict__
+
+		return postJson
 	except :
 		logging.exception("Get Parking Info failed")
 		raise
@@ -55,10 +54,12 @@ def addParkingLot(jsonData):
 
 def addVehicle(jsonData):
 	try:
+		print jsonData
+		print jsonData["vehicleId"]
 		lotId = jsonData["lotId"]
 		vehicleType = jsonData["vehicleType"]
 		vehicleId = jsonData["vehicleId"]
-		vachileObj = Vehicle(vehicleType, vehicleId)
+		vachileObj = Vehicle(lotId, vehicleType, vehicleId)
 		pDao = VehicleDao()
 		# cust.createTable()
 		pDao.insertIntoTable(vachileObj)
@@ -67,3 +68,36 @@ def addVehicle(jsonData):
 		logging.exception("Some error occurred while trying to insert in/out in DB")
 		return False
 
+def updateParkingLot(type, id):
+	try:
+		pDao = ParkingDao()
+		if type == "two":
+			pDao.updatetwoWheelerOccupied(id)
+		if type == "lmv":
+			pDao.updatelMVOccupied(id)
+		return True
+	except:
+		logging.exception("Some error occurred while trying to insert in/out in DB")
+		return False
+
+def updateRemoveParkingLot(type, id):
+	try:
+		pDao = ParkingDao()
+		if type == "two":
+			pDao.updateRemovetwoWheelerOccupied(id)
+		if type == "lmv":
+			pDao.updateRemoveLmvOccupied(id)
+		return True
+	except:
+		logging.exception("Some error occurred while trying to insert in/out in DB")
+		return False
+
+def getVechileDetaisl(vId):
+	try:
+		pDao = VehicleDao()
+		# cust.createTable()
+		result = pDao.getDetails(vId)
+		return result
+	except:
+		logging.exception("Some error occurred while trying to insert in/out in DB")
+		return False

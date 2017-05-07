@@ -11,6 +11,12 @@ class VehicleDao(BaseDao):
         result = session.query(Vehicle).filter_by(lotId = id).first()
         return result
 
+    def getDetails(self, vid):
+        logging.info("VehicleDao read row")
+        session = self.create_session()
+        result = session.query(Vehicle).filter_by(vehicleId = vid).first()
+        return result
+
 
 def main():
 	ObjCustCount = VehicleDao()

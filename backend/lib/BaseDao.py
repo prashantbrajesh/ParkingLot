@@ -31,6 +31,10 @@ class BaseDao(object):
         return result
 
 
+    def updateDecrimentRowInTable(self, objectType, column):
+        session = self.create_session()
+        result = session.query(objectType).update({objectType.column : objectType.column - 1})
+        return result
 
 class TestClass(Base):
     __tablename__ = "testclass"

@@ -1,326 +1,624 @@
-2017-05-07 02:02:53,277, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:02:53,417, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:02:58,769, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
-2017-05-07 02:02:58,770, INFO, ParkingController.py, response_parking(10), response customer controller
-2017-05-07 02:02:58,770, INFO, ManageParking.py, getParking(16), get Parking Manage head count
-2017-05-07 02:02:58,783, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
-2017-05-07 02:02:58,791, INFO, ManageParking.py, getParking(21), {'lMVParkingPrice': 15, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x10a362290>, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 5, 'totalCountOfSpaces': 10}
-2017-05-07 02:02:58,791, INFO, ParkingController.py, response_parking(25), get Parking FFC {'lMVParkingPrice': 15, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': <sqlalchemy.orm.state.InstanceState object at 0x10a362290>, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 5, 'totalCountOfSpaces': 10}
-2017-05-07 02:09:01,478, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+2017-05-07 12:26:22,395, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:26:22,714, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:26:25,068, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 12:26:25,071, ERROR, ParkingRoutes.py, removeVehicle(106), Some error occurred while trying to create parking
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 91, in removeVehicle
+    postJson = json.load(request.body)
+  File "/Library/Python/2.7/site-packages/simplejson/__init__.py", line 459, in load
+    use_decimal=use_decimal, **kw)
+  File "/Library/Python/2.7/site-packages/simplejson/__init__.py", line 516, in loads
+    return _default_decoder.decode(s)
+  File "/Library/Python/2.7/site-packages/simplejson/decoder.py", line 370, in decode
+    obj, end = self.raw_decode(s)
+  File "/Library/Python/2.7/site-packages/simplejson/decoder.py", line 400, in raw_decode
+    return self.scan_once(s, idx=_w(s, idx).end())
+JSONDecodeError: Expecting value: line 1 column 1 (char 0)
+2017-05-07 12:27:07,107, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
 Traceback (most recent call last):
   File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
   File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
     sys.exit(3)
 SystemExit: 3
-2017-05-07 02:09:02,453, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+2017-05-07 12:27:07,567, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
 Traceback (most recent call last):
   File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
   File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
     sys.exit(p.poll())
 SystemExit: 0
-2017-05-07 02:14:58,092, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:14:58,238, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:15:02,851, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
-2017-05-07 02:15:02,851, INFO, ParkingController.py, response_parking(10), response customer controller
-2017-05-07 02:15:02,851, INFO, ManageParking.py, getParking(16), get Parking Manage head count
-2017-05-07 02:15:02,856, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
-2017-05-07 02:15:02,862, ERROR, ManageParking.py, getParking(24), Get Parking Info failed
+2017-05-07 12:28:14,734, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:28:15,059, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:28:17,448, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 12:28:17,456, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 12:28:17,464, ERROR, ParkingRoutes.py, removeVehicle(102), Some error occurred while trying to create parking
 Traceback (most recent call last):
-  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
-    logging.info(postJson.__dict__.remove("_sa_instance_state"))
-AttributeError: 'dict' object has no attribute 'remove'
-2017-05-07 02:15:02,862, ERROR, ParkingController.py, response_parking(14), Error Unable to get customers
-Traceback (most recent call last):
-  File "/Users/braj/git/ParkingLots/backend/controllers/ParkingController.py", line 12, in response_parking
-    data = getParking()
-  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
-    logging.info(postJson.__dict__.remove("_sa_instance_state"))
-AttributeError: 'dict' object has no attribute 'remove'
-2017-05-07 02:15:02,865, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
-    "response": null, 
-    "status": {
-        "code": 500, 
-        "message": "get Parking fail", 
-        "success": false
-    }
-}
-2017-05-07 02:17:33,774, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
-2017-05-07 02:17:33,778, INFO, ParkingController.py, response_parking(10), response customer controller
-2017-05-07 02:17:33,778, INFO, ManageParking.py, getParking(16), get Parking Manage head count
-2017-05-07 02:17:33,787, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
-2017-05-07 02:17:33,814, ERROR, ManageParking.py, getParking(24), Get Parking Info failed
-Traceback (most recent call last):
-  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
-    logging.info(postJson.__dict__.removeValueForKey("_sa_instance_state"))
-AttributeError: 'dict' object has no attribute 'remove'
-2017-05-07 02:17:33,816, ERROR, ParkingController.py, response_parking(14), Error Unable to get customers
-Traceback (most recent call last):
-  File "/Users/braj/git/ParkingLots/backend/controllers/ParkingController.py", line 12, in response_parking
-    data = getParking()
-  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
-    logging.info(postJson.__dict__.removeValueForKey("_sa_instance_state"))
-AttributeError: 'dict' object has no attribute 'remove'
-2017-05-07 02:17:33,817, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
-    "response": null, 
-    "status": {
-        "code": 500, 
-        "message": "get Parking fail", 
-        "success": false
-    }
-}
-2017-05-07 02:17:40,136, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:17:40,286, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:17:41,388, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
-Traceback (most recent call last):
-  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
-    run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/Library/Python/2.7/site-packages/bottle.py", line 3127, in run
-    sys.exit(3)
-SystemExit: 3
-2017-05-07 02:17:42,158, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
-Traceback (most recent call last):
-  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
-    run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
-    sys.exit(p.poll())
-SystemExit: 0
-2017-05-07 02:17:52,238, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:17:52,363, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:17:56,770, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
-2017-05-07 02:17:56,771, INFO, ParkingController.py, response_parking(10), response customer controller
-2017-05-07 02:17:56,771, INFO, ManageParking.py, getParking(16), get Parking Manage head count
-2017-05-07 02:17:56,781, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
-2017-05-07 02:17:56,788, ERROR, ManageParking.py, getParking(24), Get Parking Info failed
-Traceback (most recent call last):
-  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
-    logging.info(postJson.__dict__.removeValueForKey("_sa_instance_state"))
-AttributeError: 'dict' object has no attribute 'removeValueForKey'
-2017-05-07 02:17:56,788, ERROR, ParkingController.py, response_parking(14), Error Unable to get customers
-Traceback (most recent call last):
-  File "/Users/braj/git/ParkingLots/backend/controllers/ParkingController.py", line 12, in response_parking
-    data = getParking()
-  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 21, in getParking
-    logging.info(postJson.__dict__.removeValueForKey("_sa_instance_state"))
-AttributeError: 'dict' object has no attribute 'removeValueForKey'
-2017-05-07 02:17:56,791, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
-    "response": null, 
-    "status": {
-        "code": 500, 
-        "message": "get Parking fail", 
-        "success": false
-    }
-}
-2017-05-07 02:19:12,154, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:19:12,292, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:19:39,372, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:19:39,571, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:19:45,323, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
-2017-05-07 02:19:45,326, INFO, ParkingController.py, response_parking(10), response customer controller
-2017-05-07 02:19:45,326, INFO, ManageParking.py, getParking(16), get Parking Manage head count
-2017-05-07 02:19:45,340, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
-2017-05-07 02:19:45,350, INFO, ManageParking.py, getParking(22), {'lMVParkingPrice': 15, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 5, 'totalCountOfSpaces': 10}
-2017-05-07 02:19:45,350, INFO, ParkingController.py, response_parking(25), get Parking FFC {'lMVParkingPrice': 15, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 5, 'totalCountOfSpaces': 10}
-2017-05-07 02:19:45,350, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
-    "response": {
-        "_sa_instance_state": "", 
-        "lMVOccupied": false, 
-        "lMVParkingCount": 5, 
-        "lMVParkingPrice": 15, 
-        "lotId": 1, 
-        "totalCountOfSpaces": 10, 
-        "twoWheelerOccupied": false, 
-        "twoWheelerParkingCount": 5, 
-        "twoWheelerParkingPrice": 12
-    }, 
-    "status": {
-        "code": 200, 
-        "message": "success", 
-        "success": true
-    }
-}
-2017-05-07 02:24:27,044, INFO, ParkingRoutes.py, addParkingLot(33), The data posted is {'lMVParkingPrice': 16, 'totalCountOfSpaces': 15, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10}
-2017-05-07 02:24:33,502, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
-2017-05-07 02:24:33,506, INFO, ParkingController.py, response_parking(10), response customer controller
-2017-05-07 02:24:33,506, INFO, ManageParking.py, getParking(16), get Parking Manage head count
-2017-05-07 02:24:33,519, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
-2017-05-07 02:24:33,535, INFO, ManageParking.py, getParking(22), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
-2017-05-07 02:24:33,535, INFO, ParkingController.py, response_parking(25), get Parking FFC {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
-2017-05-07 02:24:33,535, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
-    "response": {
-        "_sa_instance_state": "", 
-        "lMVOccupied": false, 
-        "lMVParkingCount": 5, 
-        "lMVParkingPrice": 16, 
-        "lotId": 1, 
-        "totalCountOfSpaces": 15, 
-        "twoWheelerOccupied": false, 
-        "twoWheelerParkingCount": 10, 
-        "twoWheelerParkingPrice": 12
-    }, 
-    "status": {
-        "code": 200, 
-        "message": "success", 
-        "success": true
-    }
-}
-2017-05-07 02:26:19,967, INFO, ParkingRoutes.py, addParkingLot(33), The data posted is {'lMVParkingPrice': 16, 'totalCountOfSpaces': 15, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10}
-2017-05-07 02:26:24,988, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
-2017-05-07 02:26:24,988, INFO, ParkingController.py, response_parking(10), response customer controller
-2017-05-07 02:26:24,989, INFO, ManageParking.py, getParking(16), get Parking Manage head count
-2017-05-07 02:26:24,993, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
-2017-05-07 02:26:24,999, INFO, ManageParking.py, getParking(22), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
-2017-05-07 02:26:24,999, INFO, ParkingController.py, response_parking(25), get Parking FFC {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': False, 'twoWheelerOccupied': False, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
-2017-05-07 02:26:25,000, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
-    "response": {
-        "_sa_instance_state": "", 
-        "lMVOccupied": false, 
-        "lMVParkingCount": 5, 
-        "lMVParkingPrice": 16, 
-        "lotId": 1, 
-        "totalCountOfSpaces": 15, 
-        "twoWheelerOccupied": false, 
-        "twoWheelerParkingCount": 10, 
-        "twoWheelerParkingPrice": 12
-    }, 
-    "status": {
-        "code": 200, 
-        "message": "success", 
-        "success": true
-    }
-}
-2017-05-07 02:26:47,226, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 89, in removeVehicle
+    objLot = mngParking.getParkingDetaisByLotId(obj.lotId)
+AttributeError: 'NoneType' object has no attribute 'lotId'
+2017-05-07 12:28:53,452, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
 Traceback (most recent call last):
   File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
   File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
     sys.exit(3)
 SystemExit: 3
-2017-05-07 02:26:47,800, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+2017-05-07 12:28:53,877, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
 Traceback (most recent call last):
   File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
   File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
     sys.exit(p.poll())
 SystemExit: 0
-2017-05-07 02:32:43,195, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:32:43,336, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:32:52,439, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+2017-05-07 12:29:27,273, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:29:27,618, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:29:31,069, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 12:29:31,069, ERROR, ParkingRoutes.py, removeVehicle(104), Some error occurred while trying to create parking
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 88, in removeVehicle
+    logging.info("v id is %d"%vehicleId)
+TypeError: %d format: a number is required, not str
+2017-05-07 12:29:56,906, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
 Traceback (most recent call last):
   File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
   File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
     sys.exit(3)
 SystemExit: 3
-2017-05-07 02:32:53,234, ERROR, RunApiServer.py, main(27), An error occurred while trying to start the API server
+2017-05-07 12:29:57,396, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
 Traceback (most recent call last):
   File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
   File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
     sys.exit(p.poll())
 SystemExit: 0
-2017-05-07 02:33:06,086, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:33:06,234, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:33:19,342, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+2017-05-07 12:30:06,314, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:30:06,790, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:30:07,890, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 12:30:07,890, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 12:30:07,897, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 12:30:07,901, INFO, ParkingRoutes.py, removeVehicle(90), None
+2017-05-07 12:30:07,902, ERROR, ParkingRoutes.py, removeVehicle(104), Some error occurred while trying to create parking
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 91, in removeVehicle
+    objLot = mngParking.getParkingDetaisByLotId(obj.lotId)
+AttributeError: 'NoneType' object has no attribute 'lotId'
+2017-05-07 12:31:07,318, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
 Traceback (most recent call last):
   File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
   File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
     sys.exit(3)
 SystemExit: 3
-2017-05-07 02:33:20,135, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+2017-05-07 12:31:07,557, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
 Traceback (most recent call last):
   File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
   File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
     sys.exit(p.poll())
 SystemExit: 0
-2017-05-07 02:33:41,921, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:33:42,060, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:33:49,189, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+2017-05-07 12:31:55,816, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:31:56,259, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:32:02,016, INFO, ParkingRoutes.py, addParkingLot(35), The data posted is {'lMVParkingPrice': 16, 'totalCountOfSpaces': 15, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10}
+2017-05-07 12:32:06,948, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 12:32:06,950, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 12:32:06,955, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:32:06,955, INFO, ParkingRoutes.py, addVehicle(59), here i amj
+2017-05-07 12:32:06,955, INFO, ParkingRoutes.py, addVehicle(60), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:32:06,958, INFO, ParkingDao.py, updatetwoWheelerOccupied(14), updatetwoWheelerOccupied update
+2017-05-07 12:32:06,968, INFO, ParkingRoutes.py, addVehicle(67), The data posted is {'lotId': 1, 'vehicleType': 'two', 'vehicleId': 7}
+2017-05-07 12:32:15,578, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 12:32:15,580, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 12:32:15,583, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 12:32:15,586, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x10fef4c90>
+2017-05-07 12:32:15,586, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 12:32:15,588, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 12:32:15,594, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 1, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:32:15,595, INFO, ParkingRoutes.py, removeVehicle(92), here i amj
+2017-05-07 12:32:15,596, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x10fef4c90>
+2017-05-07 12:32:15,598, ERROR, ParkingRoutes.py, removeVehicle(104), Some error occurred while trying to create parking
 Traceback (most recent call last):
-  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
-    run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
-    sys.exit(3)
-SystemExit: 3
-2017-05-07 02:33:49,965, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
-Traceback (most recent call last):
-  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
-    run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
-    sys.exit(p.poll())
-SystemExit: 0
-2017-05-07 02:35:37,043, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:35:37,186, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:35:42,306, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
-Traceback (most recent call last):
-  File "RunApiServer.py", line 24, in main
-    run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
-    sys.exit(3)
-SystemExit: 3
-2017-05-07 02:35:43,073, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
-Traceback (most recent call last):
-  File "RunApiServer.py", line 24, in main
-    run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
-    sys.exit(p.poll())
-SystemExit: 0
-2017-05-07 02:35:50,488, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:35:50,793, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:35:59,923, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
-Traceback (most recent call last):
-  File "RunApiServer.py", line 24, in main
-    run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
-    sys.exit(3)
-SystemExit: 3
-2017-05-07 02:36:00,535, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
-Traceback (most recent call last):
-  File "RunApiServer.py", line 24, in main
-    run(app, host='0.0.0.0', port=PORT, reloader=True)
-  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
-    sys.exit(p.poll())
-SystemExit: 0
-2017-05-07 02:36:25,783, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:36:26,022, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
-2017-05-07 02:36:43,371, DEBUG, ParkingRoutes.py, getRecentCustomers(10), /parkings  GET called
-2017-05-07 02:36:43,373, INFO, ParkingController.py, response_parking(10), response customer controller
-2017-05-07 02:36:43,374, INFO, ManageParking.py, getParking(16), get Parking Manage head count
-2017-05-07 02:36:43,385, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
-2017-05-07 02:36:43,399, INFO, ManageParking.py, getParking(22), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
-2017-05-07 02:36:43,399, INFO, ParkingController.py, response_parking(25), get Parking FFC {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
-2017-05-07 02:36:43,399, DEBUG, ParkingRoutes.py, getRecentCustomers(14), sending  {
-    "response": {
-        "_sa_instance_state": "", 
-        "lMVOccupied": 0, 
-        "lMVParkingCount": 5, 
-        "lMVParkingPrice": 16, 
-        "lotId": 1, 
-        "totalCountOfSpaces": 15, 
-        "twoWheelerOccupied": 0, 
-        "twoWheelerParkingCount": 10, 
-        "twoWheelerParkingPrice": 12
-    }, 
-    "status": {
-        "code": 200, 
-        "message": "success", 
-        "success": true
-    }
-}
-2017-05-07 02:43:34,275, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 95, in removeVehicle
+    rate = objLot.twoWheelerParkingPrice
+AttributeError: 'dict' object has no attribute 'twoWheelerParkingPrice'
+2017-05-07 12:33:25,051, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
 Traceback (most recent call last):
   File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
   File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
     sys.exit(3)
 SystemExit: 3
-2017-05-07 02:43:35,049, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+2017-05-07 12:33:25,133, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
 Traceback (most recent call last):
   File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
     run(app, host='0.0.0.0', port=PORT, reloader=True)
   File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
     sys.exit(p.poll())
 SystemExit: 0
+2017-05-07 12:33:30,686, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:33:31,035, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:33:33,647, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 12:33:33,647, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 12:33:33,653, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 12:33:33,659, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x10fc75850>
+2017-05-07 12:33:33,659, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 12:33:33,661, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 12:33:33,666, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, '_sa_instance_state': '', 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 1, 'lotId': 1, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:33:33,666, INFO, ParkingRoutes.py, removeVehicle(92), here i amj
+2017-05-07 12:33:33,666, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x10fc75850>
+2017-05-07 12:33:33,669, INFO, ParkingDao.py, updateRemovetwoWheelerOccupied(30), updatetwoWheelerOccupied update
+2017-05-07 12:33:33,676, ERROR, ParkingRoutes.py, removeVehicle(104), Some error occurred while trying to create parking
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 100, in removeVehicle
+    logging.info("The data posted is %s"%postJson)
+NameError: global name 'postJson' is not defined
+2017-05-07 12:34:04,366, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 12:34:04,821, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 12:34:13,111, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:34:13,412, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:34:16,110, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 12:34:16,110, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 12:34:16,119, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 12:34:16,127, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x10be6f810>
+2017-05-07 12:34:16,128, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 12:34:16,129, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 12:34:16,135, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:34:16,136, INFO, ParkingRoutes.py, removeVehicle(92), here i amj
+2017-05-07 12:34:16,136, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x10be6f810>
+2017-05-07 12:34:16,138, INFO, ParkingDao.py, updateRemovetwoWheelerOccupied(30), updatetwoWheelerOccupied update
+2017-05-07 12:34:16,143, ERROR, ParkingRoutes.py, removeVehicle(103), Some error occurred while trying to create parking
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 101, in removeVehicle
+    return {"cost": ((obj.time - datetime.datetime.now())/(60*60))*rate,"vehicleid":vehicleId,"duration": (obj.time - datetime.datetime.now())/(60*60)}
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'datetime.datetime'
+2017-05-07 12:35:25,045, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 12:35:25,400, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 12:44:20,190, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:44:20,525, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:44:23,488, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 12:44:23,489, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 12:44:23,497, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 12:44:23,511, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x110a0d810>
+2017-05-07 12:44:23,511, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 12:44:23,513, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 12:44:23,519, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, '_sa_instance_state': '', 'lMVOccupied': 0, 'twoWheelerOccupied': 0, 'lMVParkingCount': 5, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'lotId': 1, 'totalCountOfSpaces': 15}
+2017-05-07 12:44:23,519, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x110a0d810>
+2017-05-07 12:44:23,522, INFO, ParkingDao.py, updateRemovetwoWheelerOccupied(30), updatetwoWheelerOccupied update
+2017-05-07 12:44:23,525, INFO, ParkingRoutes.py, removeVehicle(101), None
+2017-05-07 12:44:23,525, INFO, ParkingRoutes.py, removeVehicle(102), 2017-05-07 12:44:23.525517
+2017-05-07 12:44:23,525, INFO, ParkingRoutes.py, removeVehicle(103), 12
+2017-05-07 12:44:23,525, ERROR, ParkingRoutes.py, removeVehicle(106), Some error occurred while trying to create parking
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 104, in removeVehicle
+    return {"cost": ((obj.time - datetime.datetime.now())/(60*60))*rate,"vehicleid":vehicleId,"duration": (obj.time - datetime.datetime.now())/(60*60)}
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'datetime.datetime'
+2017-05-07 12:46:03,391, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 12:46:03,589, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 12:46:19,042, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:46:19,393, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:46:26,355, INFO, ParkingRoutes.py, addParkingLot(35), The data posted is {'lMVParkingPrice': 16, 'totalCountOfSpaces': 15, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10}
+2017-05-07 12:46:32,466, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 12:46:32,469, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 12:46:32,473, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:46:32,474, INFO, ParkingRoutes.py, addVehicle(59), here i amj
+2017-05-07 12:46:32,474, INFO, ParkingRoutes.py, addVehicle(60), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:46:32,477, INFO, ParkingDao.py, updatetwoWheelerOccupied(14), updatetwoWheelerOccupied update
+2017-05-07 12:46:32,486, INFO, ParkingRoutes.py, addVehicle(67), The data posted is {'lotId': 1, 'vehicleType': 'two', 'vehicleId': 7}
+2017-05-07 12:46:32,492, ERROR, ManageParking.py, addVehicle(68), Some error occurred while trying to insert in/out in DB
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 65, in addVehicle
+    pDao.insertIntoTable(vachileObj)
+  File "/Users/braj/git/ParkingLots/backend/lib/BaseDao.py", line 26, in insertIntoTable
+    session.commit()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 874, in commit
+    self.transaction.commit()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 2139, in flush
+    self._flush(objects)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 2259, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 2223, in _flush
+    flush_context.execute()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1121, in _execute_context
+    None, None)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/default.py", line 623, in _init_compiled
+    param.append(processors[key](compiled_params[key]))
+  File "/Library/Python/2.7/site-packages/sqlalchemy/dialects/sqlite/base.py", line 744, in process
+    raise TypeError("SQLite Time type only accepts Python "
+StatementError: (exceptions.TypeError) SQLite Time type only accepts Python time objects as input. [SQL: u'INSERT INTO vehicle ("lotId", "vehicleType", "vehicleId", time) VALUES (?, ?, ?, ?)'] [parameters: [{'lotId': 1, 'vehicleType': 'two', 'vehicleId': 7}]]
+2017-05-07 12:46:32,528, INFO, VehicleController.py, add_vehicle_at_lot(45), parking lot post to DB of FFC failed
+2017-05-07 12:46:40,851, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 12:46:40,855, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 12:46:40,859, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 1, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:46:40,860, INFO, ParkingRoutes.py, addVehicle(59), here i amj
+2017-05-07 12:46:40,860, INFO, ParkingRoutes.py, addVehicle(60), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 1, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:46:40,861, INFO, ParkingDao.py, updatetwoWheelerOccupied(14), updatetwoWheelerOccupied update
+2017-05-07 12:46:40,870, INFO, ParkingRoutes.py, addVehicle(67), The data posted is {'lotId': 1, 'vehicleType': 'two', 'vehicleId': 7}
+2017-05-07 12:46:40,875, ERROR, ManageParking.py, addVehicle(68), Some error occurred while trying to insert in/out in DB
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/lib/ManageParking.py", line 65, in addVehicle
+    pDao.insertIntoTable(vachileObj)
+  File "/Users/braj/git/ParkingLots/backend/lib/BaseDao.py", line 26, in insertIntoTable
+    session.commit()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 874, in commit
+    self.transaction.commit()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 461, in commit
+    self._prepare_impl()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 441, in _prepare_impl
+    self.session.flush()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 2139, in flush
+    self._flush(objects)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 2259, in _flush
+    transaction.rollback(_capture_exception=True)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/langhelpers.py", line 66, in __exit__
+    compat.reraise(exc_type, exc_value, exc_tb)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/session.py", line 2223, in _flush
+    flush_context.execute()
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 389, in execute
+    rec.execute(self)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/unitofwork.py", line 548, in execute
+    uow
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/persistence.py", line 181, in save_obj
+    mapper, table, insert)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/orm/persistence.py", line 835, in _emit_insert_statements
+    execute(statement, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 945, in execute
+    return meth(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/sql/elements.py", line 263, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1053, in _execute_clauseelement
+    compiled_sql, distilled_params
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1121, in _execute_context
+    None, None)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1402, in _handle_dbapi_exception
+    exc_info
+  File "/Library/Python/2.7/site-packages/sqlalchemy/util/compat.py", line 203, in raise_from_cause
+    reraise(type(exception), exception, tb=exc_tb, cause=cause)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/base.py", line 1116, in _execute_context
+    context = constructor(dialect, self, conn, *args)
+  File "/Library/Python/2.7/site-packages/sqlalchemy/engine/default.py", line 623, in _init_compiled
+    param.append(processors[key](compiled_params[key]))
+  File "/Library/Python/2.7/site-packages/sqlalchemy/dialects/sqlite/base.py", line 744, in process
+    raise TypeError("SQLite Time type only accepts Python "
+StatementError: (exceptions.TypeError) SQLite Time type only accepts Python time objects as input. [SQL: u'INSERT INTO vehicle ("lotId", "vehicleType", "vehicleId", time) VALUES (?, ?, ?, ?)'] [parameters: [{'lotId': 1, 'vehicleType': 'two', 'vehicleId': 7}]]
+2017-05-07 12:46:40,877, INFO, VehicleController.py, add_vehicle_at_lot(45), parking lot post to DB of FFC failed
+2017-05-07 12:50:07,181, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 12:50:07,841, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 12:51:18,238, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:51:18,566, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:51:29,022, INFO, ParkingRoutes.py, addParkingLot(35), The data posted is {'lMVParkingPrice': 16, 'totalCountOfSpaces': 15, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10}
+2017-05-07 12:51:35,073, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 12:51:35,079, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 12:51:35,085, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:51:35,085, INFO, ParkingRoutes.py, addVehicle(59), here i amj
+2017-05-07 12:51:35,085, INFO, ParkingRoutes.py, addVehicle(60), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:51:35,091, INFO, ParkingDao.py, updatetwoWheelerOccupied(14), updatetwoWheelerOccupied update
+2017-05-07 12:51:35,101, INFO, ParkingRoutes.py, addVehicle(67), The data posted is {'lotId': 1, 'vehicleType': 'two', 'vehicleId': 7}
+2017-05-07 12:51:40,513, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 12:51:40,513, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 12:51:40,516, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 12:51:40,519, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x10523bc50>
+2017-05-07 12:51:40,520, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 12:51:40,523, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 12:51:40,528, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 1, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:51:40,528, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x10523bc50>
+2017-05-07 12:51:40,530, INFO, ParkingDao.py, updateRemovetwoWheelerOccupied(30), updatetwoWheelerOccupied update
+2017-05-07 12:51:40,536, INFO, ParkingRoutes.py, removeVehicle(101), None
+2017-05-07 12:51:40,536, INFO, ParkingRoutes.py, removeVehicle(102), 2017-05-07 12:51:40.536537
+2017-05-07 12:51:40,536, INFO, ParkingRoutes.py, removeVehicle(103), 12
+2017-05-07 12:51:40,536, ERROR, ParkingRoutes.py, removeVehicle(106), Some error occurred while trying to create parking
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 104, in removeVehicle
+    return {"cost": ((obj.time - datetime.datetime.now())/(60*60))*rate,"vehicleid":vehicleId,"duration": (obj.time - datetime.datetime.now())/(60*60)}
+TypeError: unsupported operand type(s) for -: 'NoneType' and 'datetime.datetime'
+2017-05-07 12:53:39,718, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 12:53:40,775, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 12:54:33,864, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:54:34,220, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:54:41,029, INFO, ParkingRoutes.py, addParkingLot(35), The data posted is {'lMVParkingPrice': 16, 'totalCountOfSpaces': 15, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10}
+2017-05-07 12:54:46,918, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 12:54:46,921, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 12:54:46,925, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:54:46,925, INFO, ParkingRoutes.py, addVehicle(59), here i amj
+2017-05-07 12:54:46,925, INFO, ParkingRoutes.py, addVehicle(60), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:54:46,927, INFO, ParkingDao.py, updatetwoWheelerOccupied(14), updatetwoWheelerOccupied update
+2017-05-07 12:54:46,936, INFO, ParkingRoutes.py, addVehicle(67), The data posted is {'lotId': 1, 'vehicleType': 'two', 'vehicleId': 7}
+2017-05-07 12:59:06,869, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 12:59:07,396, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 12:59:15,252, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:59:15,635, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 12:59:32,065, INFO, ParkingRoutes.py, addParkingLot(35), The data posted is {'lMVParkingPrice': 16, 'totalCountOfSpaces': 15, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10}
+2017-05-07 12:59:41,608, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 12:59:41,614, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 12:59:41,620, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:59:41,620, INFO, ParkingRoutes.py, addVehicle(59), here i amj
+2017-05-07 12:59:41,620, INFO, ParkingRoutes.py, addVehicle(60), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 12:59:41,624, INFO, ParkingDao.py, updatetwoWheelerOccupied(14), updatetwoWheelerOccupied update
+2017-05-07 12:59:41,635, INFO, ParkingRoutes.py, addVehicle(67), The data posted is {'lotId': 1, 'vehicleType': 'two', 'vehicleId': 7}
+2017-05-07 13:00:14,579, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 13:00:14,584, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 13:00:14,599, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 13:00:14,611, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x10ece4890>
+2017-05-07 13:00:14,611, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 13:00:14,613, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 13:00:14,616, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 1, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 13:00:14,617, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x10ece4890>
+2017-05-07 13:00:14,621, INFO, ParkingDao.py, updateRemovetwoWheelerOccupied(30), updatetwoWheelerOccupied update
+2017-05-07 13:00:14,629, ERROR, ParkingRoutes.py, removeVehicle(106), Some error occurred while trying to create parking
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 101, in removeVehicle
+    logging.info(obj.time)
+AttributeError: 'Vehicle' object has no attribute 'time'
+2017-05-07 13:00:54,490, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 13:00:54,611, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 13:00:58,043, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:00:58,333, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:01:01,001, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 13:01:01,002, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 13:01:01,010, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 13:01:01,027, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x104934790>
+2017-05-07 13:01:01,028, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 13:01:01,032, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 13:01:01,041, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'twoWheelerParkingPrice': 12, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingCount': 10, 'lotId': 1, 'totalCountOfSpaces': 15}
+2017-05-07 13:01:01,042, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x104934790>
+2017-05-07 13:01:01,043, INFO, ParkingDao.py, updateRemovetwoWheelerOccupied(30), updatetwoWheelerOccupied update
+2017-05-07 13:01:01,051, INFO, ParkingRoutes.py, removeVehicle(101), 2017-05-07 12:59:41.635500
+2017-05-07 13:01:01,051, INFO, ParkingRoutes.py, removeVehicle(102), 2017-05-07 13:01:01.051517
+2017-05-07 13:01:01,051, INFO, ParkingRoutes.py, removeVehicle(103), 12
+2017-05-07 13:01:01,051, ERROR, ParkingRoutes.py, removeVehicle(106), Some error occurred while trying to create parking
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 104, in removeVehicle
+    return {"cost": ((obj.insert_time - datetime.datetime.now())/(60*60))*rate,"vehicleid":vehicleId,"duration": (obj.time - datetime.datetime.now())/(60*60)}
+AttributeError: 'Vehicle' object has no attribute 'time'
+2017-05-07 13:01:29,620, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 13:01:30,169, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 13:01:31,352, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:01:31,700, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:01:34,100, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 13:01:34,101, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 13:01:34,106, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 13:01:34,114, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x10367f790>
+2017-05-07 13:01:34,114, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 13:01:34,116, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 13:01:34,120, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 13:01:34,120, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x10367f790>
+2017-05-07 13:01:34,124, INFO, ParkingDao.py, updateRemovetwoWheelerOccupied(30), updatetwoWheelerOccupied update
+2017-05-07 13:01:34,130, INFO, ParkingRoutes.py, removeVehicle(101), 2017-05-07 12:59:41.635500
+2017-05-07 13:01:34,130, INFO, ParkingRoutes.py, removeVehicle(102), 2017-05-07 13:01:34.130441
+2017-05-07 13:01:34,130, INFO, ParkingRoutes.py, removeVehicle(103), 12
+2017-05-07 13:04:54,331, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 13:04:55,086, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 13:07:21,849, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:07:22,190, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:07:27,741, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 13:07:27,743, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 13:07:27,764, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 13:07:27,776, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x105a0d790>
+2017-05-07 13:07:27,777, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 13:07:27,780, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 13:07:27,783, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 13:07:27,784, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x105a0d790>
+2017-05-07 13:07:27,785, INFO, ParkingDao.py, updateRemovetwoWheelerOccupied(30), updatetwoWheelerOccupied update
+2017-05-07 13:07:27,789, ERROR, ParkingRoutes.py, removeVehicle(108), Some error occurred while trying to create parking
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/backend/routes/ParkingRoutes.py", line 101, in removeVehicle
+    TimeStart = datetime.datetime.strptime(obj.insert_time, '%Y-%m-%d %H:%M:%S')
+TypeError: must be string, not datetime.datetime
+2017-05-07 13:08:30,850, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 13:08:31,116, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 13:08:33,951, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:08:34,303, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:08:36,586, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 13:08:36,586, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 13:08:36,595, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 13:08:36,606, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x108a63790>
+2017-05-07 13:08:36,606, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 13:08:36,612, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 13:08:36,617, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'twoWheelerParkingPrice': 12, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingCount': 10, 'lotId': 1, 'totalCountOfSpaces': 15}
+2017-05-07 13:08:36,618, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x108a63790>
+2017-05-07 13:08:36,620, INFO, ParkingDao.py, updateRemovetwoWheelerOccupied(30), updatetwoWheelerOccupied update
+2017-05-07 13:08:36,623, INFO, ParkingRoutes.py, removeVehicle(103), 2017-05-07 12:59:41.635500
+2017-05-07 13:08:36,623, INFO, ParkingRoutes.py, removeVehicle(104), -534.987671
+2017-05-07 13:08:36,623, INFO, ParkingRoutes.py, removeVehicle(105), 12
+2017-05-07 13:09:08,698, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 13:09:09,087, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 13:09:57,607, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:09:57,907, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:09:59,986, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 13:09:59,988, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 13:10:00,025, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 13:10:00,041, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x10a93b7d0>
+2017-05-07 13:10:00,041, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 13:10:00,047, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 13:10:00,054, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, '_sa_instance_state': '', 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, 'lotId': 1, 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 13:10:00,054, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x10a93b7d0>
+2017-05-07 13:10:00,058, INFO, ParkingDao.py, updateRemovetwoWheelerOccupied(30), updatetwoWheelerOccupied update
+2017-05-07 13:10:00,066, INFO, ParkingRoutes.py, removeVehicle(103), 2017-05-07 12:59:41.635500
+2017-05-07 13:10:00,067, INFO, ParkingRoutes.py, removeVehicle(104), 618.431387
+2017-05-07 13:10:00,067, INFO, ParkingRoutes.py, removeVehicle(106), 12
+2017-05-07 13:11:46,852, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3115, in run
+    sys.exit(3)
+SystemExit: 3
+2017-05-07 13:11:47,021, ERROR, RunApiServer.py, main(28), An error occurred while trying to start the API server
+Traceback (most recent call last):
+  File "/Users/braj/git/ParkingLots/RunApiServer.py", line 24, in main
+    run(app, host='0.0.0.0', port=PORT, reloader=True)
+  File "/Library/Python/2.7/site-packages/bottle.py", line 3075, in run
+    sys.exit(p.poll())
+SystemExit: 0
+2017-05-07 13:11:55,403, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:11:55,741, DEBUG, RunApiServer.py, main(21), Inside Main Run Api Server. Trying to start the API server
+2017-05-07 13:11:58,506, INFO, ParkingRoutes.py, removeVehicle(83), remove
+2017-05-07 13:11:58,506, INFO, ParkingRoutes.py, removeVehicle(88), v id is 7
+2017-05-07 13:11:58,512, INFO, VehicleDao.py, getDetails(15), VehicleDao read row
+2017-05-07 13:11:58,517, INFO, ParkingRoutes.py, removeVehicle(90), <backend.models.Vehicle.Vehicle object at 0x10565b790>
+2017-05-07 13:11:58,517, INFO, ManageParking.py, getParkingDetaisByLotId(28), get Parking Manage head count
+2017-05-07 13:11:58,521, INFO, ParkingDao.py, readRowFromTable(8), ParkingDao read row
+2017-05-07 13:11:58,525, INFO, ManageParking.py, getParkingDetaisByLotId(34), {'lMVParkingPrice': 16, 'lotId': 1, 'lMVParkingCount': 5, 'lMVOccupied': 0, 'twoWheelerOccupied': 0, '_sa_instance_state': '', 'twoWheelerParkingPrice': 12, 'twoWheelerParkingCount': 10, 'totalCountOfSpaces': 15}
+2017-05-07 13:11:58,525, INFO, ParkingRoutes.py, removeVehicle(93), <backend.models.Vehicle.Vehicle object at 0x10565b790>
+2017-05-07 13:11:58,527, INFO, ParkingDao.py, updateRemovetwoWheelerOccupied(30), updatetwoWheelerOccupied update
+2017-05-07 13:11:58,530, INFO, ParkingRoutes.py, removeVehicle(103), 2017-05-07 12:59:41.635500
+2017-05-07 13:11:58,530, INFO, ParkingRoutes.py, removeVehicle(104), 736.894562
+2017-05-07 13:11:58,530, INFO, ParkingRoutes.py, removeVehicle(106), 12
